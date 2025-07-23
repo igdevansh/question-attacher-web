@@ -1,11 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Header } from "@/components/Header";
+import { LectureSection } from "@/components/LectureSection";
+import { courseData } from "@/data/courseData";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
+        <Header />
+        
+        <div className="space-y-4">
+          {courseData.map((section, index) => (
+            <LectureSection
+              key={section.id}
+              title={section.title}
+              progress={section.progress}
+              problems={section.problems}
+              isExpanded={index === 2} // Expand the third section (Hashing) by default
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
