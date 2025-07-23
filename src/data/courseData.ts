@@ -1,16 +1,20 @@
-// This would typically come from an API using the provided key
-// TAKEUFORWARD_API_KEY= djUrndh-DSA-KARLO-hjuRUf
+// TakeUForward API Integration
+// API Key: djUrndh-DSA-KARLO-hjuRUf
+// Note: In production, this would fetch from the TakeUForward API
+// For demo purposes, using static data with the same structure
 
-export const courseData = [
+import { CourseSection } from '@/types/course';
+
+export const courseData: CourseSection[] = [
   {
     id: "lec4",
     title: "Lec 4: Know Basic Maths",
-    progress: { completed: 7, total: 7 },
+    progress: { completed: 0, total: 2 },
     problems: [
       {
         id: "math1",
         title: "Count Digits",
-        status: 'completed' as const,
+        status: 'pending' as const,
         hasSolution: false,
         hasResourcePlus: true,
         hasResourceFree: true,
@@ -22,7 +26,7 @@ export const courseData = [
       {
         id: "math2", 
         title: "Reverse Number",
-        status: 'completed' as const,
+        status: 'pending' as const,
         hasSolution: false,
         hasResourcePlus: true,
         hasResourceFree: true,
@@ -36,12 +40,12 @@ export const courseData = [
   {
     id: "lec5",
     title: "Lec 5: Learn Basic Recursion",
-    progress: { completed: 9, total: 9 },
+    progress: { completed: 0, total: 2 },
     problems: [
       {
         id: "rec1",
         title: "Print 1 to N using Recursion",
-        status: 'completed' as const,
+        status: 'pending' as const,
         hasSolution: false,
         hasResourcePlus: true,
         hasResourceFree: true,
@@ -53,7 +57,7 @@ export const courseData = [
       {
         id: "rec2",
         title: "Print N to 1 using Recursion", 
-        status: 'completed' as const,
+        status: 'pending' as const,
         hasSolution: false,
         hasResourcePlus: true,
         hasResourceFree: true,
@@ -67,12 +71,12 @@ export const courseData = [
   {
     id: "lec6",
     title: "Lec 6: Learn Basic Hashing",
-    progress: { completed: 3, total: 3 },
+    progress: { completed: 0, total: 3 },
     problems: [
       {
         id: "hash1",
         title: "Hashing Theory",
-        status: 'completed' as const,
+        status: 'pending' as const,
         hasSolution: false,
         hasResourcePlus: true,
         hasResourceFree: true,
@@ -84,7 +88,7 @@ export const courseData = [
       {
         id: "hash2",
         title: "Counting frequencies of array elements",
-        status: 'completed' as const,
+        status: 'pending' as const,
         hasSolution: true,
         hasResourcePlus: true,
         hasResourceFree: false,
@@ -96,7 +100,7 @@ export const courseData = [
       {
         id: "hash3",
         title: "Find the highest/lowest frequency element",
-        status: 'completed' as const,
+        status: 'pending' as const,
         hasSolution: true,
         hasResourcePlus: true,
         hasResourceFree: false,
@@ -110,12 +114,12 @@ export const courseData = [
   {
     id: "step2",
     title: "Step 2 : Learn Important Sorting Techniques",
-    progress: { completed: 7, total: 7 },
+    progress: { completed: 0, total: 2 },
     problems: [
       {
         id: "sort1",
         title: "Selection Sort",
-        status: 'completed' as const,
+        status: 'pending' as const,
         hasSolution: true,
         hasResourcePlus: true,
         hasResourceFree: true,
@@ -127,7 +131,7 @@ export const courseData = [
       {
         id: "sort2",
         title: "Bubble Sort",
-        status: 'completed' as const,
+        status: 'pending' as const,
         hasSolution: true,
         hasResourcePlus: true,
         hasResourceFree: true,
@@ -141,12 +145,12 @@ export const courseData = [
   {
     id: "step3",
     title: "Step 3 : Solve Problems on Arrays [Easy -> Medium -> Hard]",
-    progress: { completed: 40, total: 40 },
+    progress: { completed: 0, total: 2 },
     problems: [
       {
         id: "array1",
         title: "Largest Element in Array",
-        status: 'completed' as const,
+        status: 'pending' as const,
         hasSolution: true,
         hasResourcePlus: true,
         hasResourceFree: true,
@@ -158,7 +162,7 @@ export const courseData = [
       {
         id: "array2",
         title: "Second Largest Element in Array",
-        status: 'completed' as const,
+        status: 'pending' as const,
         hasSolution: true,
         hasResourcePlus: true,
         hasResourceFree: true,

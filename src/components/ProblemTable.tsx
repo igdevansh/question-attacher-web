@@ -1,25 +1,29 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Play, FileText, Youtube, Paperclip, Plus, Star } from "lucide-react";
-
-interface Problem {
-  id: string;
-  title: string;
-  status: 'completed' | 'pending';
-  hasSolution: boolean;
-  hasResourcePlus: boolean;
-  hasResourceFree: boolean;
-  hasPractice: boolean;
-  hasNote: boolean;
-  hasRevision: boolean;
-  difficulty: 'Easy' | 'Medium' | 'Hard';
-}
+import { CheckCircle, Play, FileText, Youtube, Star } from "lucide-react";
+import { Problem } from "@/types/course";
+import { NoteDialog } from "./NoteDialog";
+import { AttachmentDialog } from "./AttachmentDialog";
+import { useToast } from "@/hooks/use-toast";
 
 interface ProblemTableProps {
   problems: Problem[];
+  onToggleStatus: (problemId: string) => void;
+  onToggleStar: (problemId: string) => void;
+  onUpdateNote: (problemId: string, note: string) => void;
+  onAddAttachment: (problemId: string, fileName: string) => void;
+  onRemoveAttachment: (problemId: string, fileName: string) => void;
 }
 
-export const ProblemTable = ({ problems }: ProblemTableProps) => {
+export const ProblemTable = ({ 
+  problems, 
+  onToggleStatus, 
+  onToggleStar, 
+  onUpdateNote, 
+  onAddAttachment, 
+  onRemoveAttachment 
+}: ProblemTableProps) => {
+  const { toast } = useToast();
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'Easy': return 'text-easy';
@@ -59,11 +63,16 @@ export const ProblemTable = ({ problems }: ProblemTableProps) => {
           {problems.map((problem) => (
             <tr key={problem.id} className="border-b border-border hover:bg-muted/50 transition-colors">
               <td className="py-3 px-4">
-                {problem.status === 'completed' ? (
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                ) : (
-                  <div className="w-5 h-5 border-2 border-muted rounded-full" />
-                )}
+                <button
+                  onClick={() => onToggleStatus(problem.id)}
+                  className="hover:scale-110 transition-transform"
+                >
+                  {problem.status === 'completed' ? (
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                  ) : (
+                    <div className="w-5 h-5 border-2 border-muted rounded-full hover:border-primary transition-colors" />
+                  )}
+                </button>
               </td>
               <td className="py-3 px-4 font-medium text-foreground">
                 {problem.title}
@@ -87,7 +96,19 @@ export const ProblemTable = ({ problems }: ProblemTableProps) => {
               </td>
               <td className="py-3 px-4 text-center">
                 {problem.hasPractice ? (
-                  <Button variant="outline" size="sm" className="text-primary border-primary hover:bg-primary hover:text-primary-foreground">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="text-primary border-primary hover:bg-primary hover:text-primary-foreground"
+                    onClick={() => {
+                      toast({
+                        title: "Opening Practice",
+                        description: `Starting practice for ${problem.title}`,
+                      });
+                      // In a real app, this would navigate to the practice page
+                      window.open(`/practice/${problem.id}`, '_blank');
+                    }}
+                  >
                     Solve
                   </Button>
                 ) : (
@@ -95,18 +116,30 @@ export const ProblemTable = ({ problems }: ProblemTableProps) => {
                 )}
               </td>
               <td className="py-3 px-4 text-center">
-                <Button variant="ghost" size="sm" className="hover:bg-muted">
-                  <Plus className="w-4 h-4" />
-                </Button>
+                <NoteDialog
+                  problemId={problem.id}
+                  problemTitle={problem.title}
+                  existingNote={problem.notes}
+                  onSave={(note) => onUpdateNote(problem.id, note)}
+                />
               </td>
               <td className="py-3 px-4 text-center">
-                <Button variant="ghost" size="sm" className="hover:bg-muted">
-                  <Paperclip className="w-4 h-4" />
-                </Button>
+                <AttachmentDialog
+                  problemId={problem.id}
+                  problemTitle={problem.title}
+                  attachments={problem.attachedDocuments || []}
+                  onAdd={(fileName) => onAddAttachment(problem.id, fileName)}
+                  onRemove={(fileName) => onRemoveAttachment(problem.id, fileName)}
+                />
               </td>
               <td className="py-3 px-4 text-center">
-                <Button variant="ghost" size="sm" className="hover:bg-muted">
-                  <Star className="w-4 h-4" />
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="hover:bg-muted"
+                  onClick={() => onToggleStar(problem.id)}
+                >
+                  <Star className={`w-4 h-4 ${problem.isStarred ? 'fill-yellow-400 text-yellow-400' : ''}`} />
                 </Button>
               </td>
               <td className="py-3 px-4 text-center">

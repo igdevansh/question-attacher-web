@@ -1,28 +1,31 @@
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { ProblemTable } from "./ProblemTable";
 import { useState } from "react";
-
-interface Problem {
-  id: string;
-  title: string;
-  status: 'completed' | 'pending';
-  hasSolution: boolean;
-  hasResourcePlus: boolean;
-  hasResourceFree: boolean;
-  hasPractice: boolean;
-  hasNote: boolean;
-  hasRevision: boolean;
-  difficulty: 'Easy' | 'Medium' | 'Hard';
-}
+import { Problem } from "@/types/course";
 
 interface LectureSectionProps {
   title: string;
   progress: { completed: number; total: number };
   problems: Problem[];
   isExpanded?: boolean;
+  onToggleStatus: (problemId: string) => void;
+  onToggleStar: (problemId: string) => void;
+  onUpdateNote: (problemId: string, note: string) => void;
+  onAddAttachment: (problemId: string, fileName: string) => void;
+  onRemoveAttachment: (problemId: string, fileName: string) => void;
 }
 
-export const LectureSection = ({ title, progress, problems, isExpanded = false }: LectureSectionProps) => {
+export const LectureSection = ({ 
+  title, 
+  progress, 
+  problems, 
+  isExpanded = false,
+  onToggleStatus,
+  onToggleStar,
+  onUpdateNote,
+  onAddAttachment,
+  onRemoveAttachment
+}: LectureSectionProps) => {
   const [expanded, setExpanded] = useState(isExpanded);
   const progressPercentage = (progress.completed / progress.total) * 100;
 
@@ -60,7 +63,14 @@ export const LectureSection = ({ title, progress, problems, isExpanded = false }
       
       {expanded && (
         <div className="mt-2 bg-card border border-border rounded-lg overflow-hidden">
-          <ProblemTable problems={problems} />
+          <ProblemTable 
+            problems={problems}
+            onToggleStatus={onToggleStatus}
+            onToggleStar={onToggleStar}
+            onUpdateNote={onUpdateNote}
+            onAddAttachment={onAddAttachment}
+            onRemoveAttachment={onRemoveAttachment}
+          />
         </div>
       )}
     </div>
