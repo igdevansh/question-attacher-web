@@ -43,12 +43,6 @@ export const ProblemTable = ({
             <th className="text-center py-3 px-4 font-medium text-muted-foreground">
               <div className="flex items-center justify-center gap-1">
                 <span>Resource</span>
-                <span className="text-primary text-xs">(Plus)</span>
-              </div>
-            </th>
-            <th className="text-center py-3 px-4 font-medium text-muted-foreground">
-              <div className="flex items-center justify-center gap-1">
-                <span>Resource</span>
                 <span className="text-xs">(Free)</span>
               </div>
             </th>
@@ -78,13 +72,6 @@ export const ProblemTable = ({
                 {problem.title}
               </td>
               <td className="py-3 px-4 text-center">
-                {problem.hasResourcePlus ? (
-                  <Play className="w-5 h-5 text-primary mx-auto" />
-                ) : (
-                  <span className="text-muted-foreground">-</span>
-                )}
-              </td>
-              <td className="py-3 px-4 text-center">
                 {problem.hasResourceFree ? (
                   <div className="flex items-center justify-center gap-2">
                     <FileText className="w-4 h-4 text-muted-foreground" />
@@ -96,21 +83,7 @@ export const ProblemTable = ({
               </td>
               <td className="py-3 px-4 text-center">
                 {problem.hasPractice ? (
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="text-primary border-primary hover:bg-primary hover:text-primary-foreground"
-                    onClick={() => {
-                      toast({
-                        title: "Opening Practice",
-                        description: `Starting practice for ${problem.title}`,
-                      });
-                      // In a real app, this would navigate to the practice page
-                      window.open(`/practice/${problem.id}`, '_blank');
-                    }}
-                  >
-                    Solve
-                  </Button>
+                  <span className="text-primary">✓</span>
                 ) : (
                   <span className="text-muted-foreground">-</span>
                 )}
