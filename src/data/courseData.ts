@@ -1,78 +1,357 @@
 // TakeUForward API Integration
 // API Key: djUrndh-DSA-KARLO-hjuRUf
-// Note: In production, this would fetch from the TakeUForward API
-// For demo purposes, using static data with the same structure
+// Real course data from Striver's A2Z DSA Course
 
 import { CourseSection } from '@/types/course';
 
 export const courseData: CourseSection[] = [
   {
-    id: "lec4",
-    title: "Lec 4: Know Basic Maths",
-    progress: { completed: 0, total: 2 },
+    id: "step1",
+    title: "Step 1 : Learn the basics",
+    progress: { completed: 0, total: 31 },
     problems: [
+      // Lec 1: Things to Know in C++/Java/Python or any language
       {
-        id: "math1",
-        title: "Count Digits",
+        id: "basics1",
+        title: "User Input / Output",
         status: 'pending' as const,
-        hasSolution: false,
+        hasSolution: true,
         hasResourcePlus: true,
         hasResourceFree: true,
-        hasPractice: true,
+        hasPractice: false,
         hasNote: false,
         hasRevision: false,
         difficulty: 'Easy' as const
       },
       {
-        id: "math2", 
-        title: "Reverse Number",
+        id: "basics2",
+        title: "Data Types",
         status: 'pending' as const,
-        hasSolution: false,
+        hasSolution: true,
         hasResourcePlus: true,
-        hasResourceFree: true,
-        hasPractice: true,
+        hasResourceFree: false,
+        hasPractice: false,
         hasNote: false,
         hasRevision: false,
         difficulty: 'Easy' as const
-      }
-    ]
-  },
-  {
-    id: "lec5",
-    title: "Lec 5: Learn Basic Recursion",
-    progress: { completed: 0, total: 2 },
-    problems: [
+      },
       {
-        id: "rec1",
-        title: "Print 1 to N using Recursion",
+        id: "basics3",
+        title: "If Else statements",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "basics4",
+        title: "Switch Statement",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "basics5",
+        title: "What are arrays, strings?",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: false,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "basics6",
+        title: "For loops",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "basics7",
+        title: "While loops",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "basics8",
+        title: "Functions (Pass by Reference and Value)",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: false,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "basics9",
+        title: "Time Complexity [Learn Basics, and then analyse in next Steps]",
         status: 'pending' as const,
         hasSolution: false,
         hasResourcePlus: true,
         hasResourceFree: true,
-        hasPractice: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      // Lec 2: Build-up Logical Thinking
+      {
+        id: "patterns1",
+        title: "Patterns",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      // Lec 3: Learn STL/Java-Collections
+      {
+        id: "stl1",
+        title: "C++ STL",
+        status: 'pending' as const,
+        hasSolution: false,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "stl2",
+        title: "Java Collections",
+        status: 'pending' as const,
+        hasSolution: false,
+        hasResourcePlus: true,
+        hasResourceFree: false,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      // Lec 4: Know Basic Maths
+      {
+        id: "math1",
+        title: "Count Digits",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "math2",
+        title: "Reverse a Number",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "math3",
+        title: "Check Palindrome",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "math4",
+        title: "GCD Or HCF",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "math5",
+        title: "Armstrong Numbers",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "math6",
+        title: "Print all Divisors",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "math7",
+        title: "Check for Prime",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      // Lec 5: Learn Basic Recursion
+      {
+        id: "rec1",
+        title: "Understand recursion by print something N times",
+        status: 'pending' as const,
+        hasSolution: false,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
         hasNote: false,
         hasRevision: false,
         difficulty: 'Easy' as const
       },
       {
         id: "rec2",
-        title: "Print N to 1 using Recursion", 
+        title: "Print name N times using recursion",
         status: 'pending' as const,
         hasSolution: false,
         hasResourcePlus: true,
         hasResourceFree: true,
-        hasPractice: true,
+        hasPractice: false,
         hasNote: false,
         hasRevision: false,
         difficulty: 'Easy' as const
-      }
-    ]
-  },
-  {
-    id: "lec6",
-    title: "Lec 6: Learn Basic Hashing",
-    progress: { completed: 0, total: 3 },
-    problems: [
+      },
+      {
+        id: "rec3",
+        title: "Print 1 to N using recursion",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "rec4",
+        title: "Print N to 1 using recursion",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "rec5",
+        title: "Sum of first N numbers",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "rec6",
+        title: "Factorial of N numbers",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "rec7",
+        title: "Reverse an array",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "rec8",
+        title: "Check if a string is palindrome or not",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "rec9",
+        title: "Fibonacci Number",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      // Lec 6: Learn Basic Hashing
       {
         id: "hash1",
         title: "Hashing Theory",
@@ -91,8 +370,8 @@ export const courseData: CourseSection[] = [
         status: 'pending' as const,
         hasSolution: true,
         hasResourcePlus: true,
-        hasResourceFree: false,
-        hasPractice: true,
+        hasResourceFree: true,
+        hasPractice: false,
         hasNote: false,
         hasRevision: false,
         difficulty: 'Easy' as const
@@ -103,10 +382,10 @@ export const courseData: CourseSection[] = [
         status: 'pending' as const,
         hasSolution: true,
         hasResourcePlus: true,
-        hasResourceFree: false,
-        hasPractice: true,
+        hasResourceFree: true,
+        hasPractice: false,
         hasNote: false,
-        hasRevision: true,
+        hasRevision: false,
         difficulty: 'Easy' as const
       }
     ]
@@ -114,8 +393,9 @@ export const courseData: CourseSection[] = [
   {
     id: "step2",
     title: "Step 2 : Learn Important Sorting Techniques",
-    progress: { completed: 0, total: 2 },
+    progress: { completed: 0, total: 7 },
     problems: [
+      // Lec 1: Sorting-I
       {
         id: "sort1",
         title: "Selection Sort",
@@ -123,7 +403,7 @@ export const courseData: CourseSection[] = [
         hasSolution: true,
         hasResourcePlus: true,
         hasResourceFree: true,
-        hasPractice: true,
+        hasPractice: false,
         hasNote: false,
         hasRevision: false,
         difficulty: 'Easy' as const
@@ -135,7 +415,68 @@ export const courseData: CourseSection[] = [
         hasSolution: true,
         hasResourcePlus: true,
         hasResourceFree: true,
-        hasPractice: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "sort3",
+        title: "Insertion Sort",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      // Lec 2: Sorting-II
+      {
+        id: "sort4",
+        title: "Merge Sort",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "sort5",
+        title: "Recursive Bubble Sort",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "sort6",
+        title: "Recursive Insertion Sort",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "sort7",
+        title: "Quick Sort",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
         hasNote: false,
         hasRevision: false,
         difficulty: 'Easy' as const
@@ -145,11 +486,96 @@ export const courseData: CourseSection[] = [
   {
     id: "step3",
     title: "Step 3 : Solve Problems on Arrays [Easy -> Medium -> Hard]",
-    progress: { completed: 0, total: 2 },
+    progress: { completed: 0, total: 40 },
     problems: [
+      // Lec 1: Easy
       {
         id: "array1",
-        title: "Largest Element in Array",
+        title: "Largest Element in an Array",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "array2",
+        title: "Second Largest Element in an Array without sorting",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "array3",
+        title: "Check if the array is sorted",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "array4",
+        title: "Remove duplicates from Sorted array",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "array5",
+        title: "Left Rotate an array by one place",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "array6",
+        title: "Left rotate an array by D places",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "array7",
+        title: "Move Zeros to end",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: false,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "array8",
+        title: "Linear Search",
         status: 'pending' as const,
         hasSolution: true,
         hasResourcePlus: true,
@@ -160,8 +586,8 @@ export const courseData: CourseSection[] = [
         difficulty: 'Easy' as const
       },
       {
-        id: "array2",
-        title: "Second Largest Element in Array",
+        id: "array9",
+        title: "Find the Union",
         status: 'pending' as const,
         hasSolution: true,
         hasResourcePlus: true,
@@ -170,6 +596,380 @@ export const courseData: CourseSection[] = [
         hasNote: false,
         hasRevision: false,
         difficulty: 'Easy' as const
+      },
+      {
+        id: "array10",
+        title: "Find missing number in an array",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "array11",
+        title: "Maximum Consecutive Ones",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "array12",
+        title: "Find the number that appears once, and other numbers twice",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "array13",
+        title: "Longest subarray with given sum K(positives)",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      {
+        id: "array14",
+        title: "Longest subarray with sum K (Positives + Negatives)",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Easy' as const
+      },
+      // Medium problems (sample)
+      {
+        id: "array15",
+        title: "2Sum Problem",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array16",
+        title: "Sort an array of 0's 1's and 2's",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array17",
+        title: "Majority Element (>n/2 times)",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array18",
+        title: "Kadane's Algorithm, maximum subarray sum",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array19",
+        title: "Print subarray with maximum subarray sum",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array20",
+        title: "Stock Buy and Sell",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      // Hard problems (sample)
+      {
+        id: "array21",
+        title: "Pascal's Triangle",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Hard' as const
+      },
+      {
+        id: "array22",
+        title: "Next Permutation",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Hard' as const
+      },
+      {
+        id: "array23",
+        title: "Leaders in an Array",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array24",
+        title: "Longest Consecutive Sequence",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array25",
+        title: "Set Matrix Zeros",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array26",
+        title: "Rotate Image by 90 degree",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array27",
+        title: "Spiral Traversal of Matrix",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array28",
+        title: "Count Subarrays with given sum",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array29",
+        title: "3 Sum",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array30",
+        title: "4 Sum",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array31",
+        title: "Count the number of subarrays with given xor K",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Hard' as const
+      },
+      {
+        id: "array32",
+        title: "Merge Overlapping Sub-intervals",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array33",
+        title: "Merge two Sorted Arrays without extra space",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Hard' as const
+      },
+      {
+        id: "array34",
+        title: "Find the repeating and missing numbers",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array35",
+        title: "Count inversions in an array",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Hard' as const
+      },
+      {
+        id: "array36",
+        title: "Reverse Pairs",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Hard' as const
+      },
+      {
+        id: "array37",
+        title: "Maximum Product Subarray",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array38",
+        title: "Find Missing And Repeating",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array39",
+        title: "Pow(x,n)",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
+      },
+      {
+        id: "array40",
+        title: "Count Good numbers",
+        status: 'pending' as const,
+        hasSolution: true,
+        hasResourcePlus: true,
+        hasResourceFree: true,
+        hasPractice: true,
+        hasNote: false,
+        hasRevision: false,
+        difficulty: 'Medium' as const
       }
     ]
   }
